@@ -6,6 +6,7 @@ import {useI18n} from "vue-i18n";
 import {useStorageStore} from "../store/storage.ts";
 import {ref} from "vue";
 import Modal from "./Modal.vue";
+import Logo from "../assets/logo.png";
 
 const storageStore = useStorageStore();
 const { t, locale } = useI18n();
@@ -31,7 +32,7 @@ const addWeatherCard = () => {
 <template>
   <div class="forecast-main">
     <div class="forecast-main__header">
-      <img src="/weather-forecast/logo.png" class="forecast-main__logo" width="200" height="55" alt="Weather forecast" />
+      <img :src="Logo" class="forecast-main__logo" width="200" height="55" alt="Weather forecast" />
       <h1 class="forecast-main__title">{{$t('weather.logo')}}</h1>
       <div class="forecast-main__lang-switcher">
         <button @click="changeLang('en')">Eng</button>
